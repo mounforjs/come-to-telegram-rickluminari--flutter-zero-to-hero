@@ -94,38 +94,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Container(
-          // This will make crossAxisAlignment work in the Row
-          height: 200,
+      body: Image.asset(
+        'assets/images/bg.jpg',
 
-          color: const Color.fromARGB(255, 48, 97, 97),
-          child: Row(
-            //The mainAxis of a Row is horizontal, so this will align the children to the start of the horizontal axis
-            //The crossAxis of a Row is vertical, so this will align the children to the start of the vertical axis
-
-            //Use height in the parent container to make the children stretch vertically
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 100,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromARGB(255, 168, 216, 35),
-                ),
-              ),
-              Container(
-                width: 100,
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25),
-                  color: const Color.fromARGB(255, 18, 173, 70),
-                ),
-              ),
-            ],
-          ),
-        ),
+        //fit and height are used to make the image cover the entire screen
+        fit: BoxFit.cover,
+        height: double.infinity,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
