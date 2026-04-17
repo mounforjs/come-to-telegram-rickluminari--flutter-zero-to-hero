@@ -18,7 +18,16 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Flutter Demo Home Page',
+            style: TextStyle(color: Colors.white),
+          ),
+          leading: Icon(Icons.login, color: Colors.white),
+          backgroundColor: Colors.teal,
+        ),
+      ),
     ); //sd
   }
 }
