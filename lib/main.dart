@@ -96,27 +96,30 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
+          color: Colors.blue,
           width: double.infinity,
-          height: double.infinity,
-          margin: EdgeInsets.all(20),
-          padding: EdgeInsets.all(50),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
-            color: Colors.red,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: const Color.fromARGB(255, 168, 216, 35),
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: const Color.fromARGB(255, 18, 173, 70),
+                ),
+              ),
+            ],
           ),
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            padding: EdgeInsets.all(50),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: const Color.fromARGB(255, 241, 207, 12),
-            ),
-            child: Text(
-              "Hola mundo",
-              style: TextStyle(color: const Color.fromARGB(255, 10, 10, 10)),
-            ), //hola
-          ), //hola
         ),
       ),
       floatingActionButton: FloatingActionButton(
