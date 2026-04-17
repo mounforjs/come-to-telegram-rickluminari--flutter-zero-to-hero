@@ -24,8 +24,19 @@ class MyApp extends StatelessWidget {
             'Flutter Demo Home Page',
             style: TextStyle(color: Colors.white),
           ),
-          leading: Icon(Icons.login, color: Colors.white),
-          backgroundColor: Colors.teal,
+        ),
+        bottomNavigationBar: NavigationBar(
+          selectedIndex: 0,
+          onDestinationSelected: (int value) {
+            print(value);
+          },
+
+          //Your required at least 2 destinations in order to show the navigation bar
+          //Otherwise, it will not show the navigation bar and you will get an error
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: 'None'), //sd
+            NavigationDestination(icon: Icon(Icons.person), label: 'None'), //sd
+          ],
         ),
       ),
     ); //sd
