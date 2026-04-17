@@ -24,36 +24,7 @@ class MyApp extends StatelessWidget {
             'Flutter Demo Home Page',
             style: TextStyle(color: Colors.white),
           ),
-        ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              ListTile(title: Text("Sample List Item")),
-              DrawerHeader(child: Text("Drawer Header")),
-            ],
-          ),
         ), //ssd
-        floatingActionButton: Column(
-          //if don't add this it won't show
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-                print("sdfsf");
-              },
-              child: Icon(Icons.add),
-            ),
-
-            //This allow you to separate the buttons and make them look better
-            SizedBox(height: 18), // Add some spacing between the buttons
-            FloatingActionButton(
-              onPressed: () {
-                print("sdfsf");
-              },
-              child: Icon(Icons.add),
-            ),
-          ],
-        ),
         bottomNavigationBar: NavigationBar(
           selectedIndex: 0,
           onDestinationSelected: (int value) {
