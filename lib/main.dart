@@ -95,36 +95,12 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
 
-      //Using padding instead of container is less expensive and more efficient,
-      body: Container(
-        child: Stack(
-          children: [
-            //SizeBox similar to container but it is used to give a specific size to the child widget, in this case we are using it to center the text in the middle of the screen
-            //Less expensive than container because it does not have a decoration property and it does not have a child property, it only has a child property that is used to give a specific size to the child widget, in this case we are using it to center the text in the middle of the screen
-            SizedBox(
-              child: Center(
-                child: Text(
-                  'You have pushed the button this many times:',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-            ),
-
-            //For some reason ListTile color doesn't show over images.
-            ListTile(
-              leading: Icon(Icons.account_circle, color: Colors.white),
-              title: Text('John Doe', style: TextStyle(color: Colors.white)),
-              tileColor: Colors.red,
-              trailing: Text(
-                "Hello world",
-                style: TextStyle(color: Colors.white),
-              ),
-              onTap: () {
-                print("Hello world");
-              },
-            ), //hola
-          ],
-        ),
+      //Using Wrap instead of Row to avoid overflow when the screen is too small
+      body: Wrap(
+        children: [
+          Text('You have pushed the button this many times:'),
+          Text('You have pushed the button this many times:'),
+        ], //sd
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
