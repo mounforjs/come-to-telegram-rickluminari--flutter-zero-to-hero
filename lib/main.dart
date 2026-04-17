@@ -96,11 +96,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          color: Colors.blue,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          // This will make crossAxisAlignment work in the Row
+          height: 200,
+
+          color: const Color.fromARGB(255, 48, 97, 97),
+          child: Row(
+            //The mainAxis of a Row is horizontal, so this will align the children to the start of the horizontal axis
+            //The crossAxis of a Row is vertical, so this will align the children to the start of the vertical axis
+
+            //Use height in the parent container to make the children stretch vertically
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 100,
