@@ -97,17 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
       //Using padding instead of container is less expensive and more efficient,
       body: Container(
-        padding: EdgeInsets.all(16.0),
         child: Stack(
           children: [
-            Image.asset(
-              'assets/images/bg.jpg',
-
-              //fit and height are used to make the image cover the entire screen
-              fit: BoxFit.cover,
-              height: double.infinity,
-            ),
-
             //SizeBox similar to container but it is used to give a specific size to the child widget, in this case we are using it to center the text in the middle of the screen
             //Less expensive than container because it does not have a decoration property and it does not have a child property, it only has a child property that is used to give a specific size to the child widget, in this case we are using it to center the text in the middle of the screen
             SizedBox(
@@ -118,6 +109,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+
+            //For some reason ListTile color doesn't show over images.
+            ListTile(
+              leading: Icon(Icons.account_circle, color: Colors.white),
+              title: Text('John Doe', style: TextStyle(color: Colors.white)),
+              tileColor: Colors.red,
+              trailing: Text(
+                "Hello world",
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                print("Hello world");
+              },
+            ), //hola
           ],
         ),
       ),
