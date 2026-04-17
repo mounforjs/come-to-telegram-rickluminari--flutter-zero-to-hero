@@ -25,6 +25,27 @@ class MyApp extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
+        floatingActionButton: Column(
+          //if don't add this it won't show
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                print("sdfsf");
+              },
+              child: Icon(Icons.add),
+            ),
+
+            //This allow you to separate the buttons and make them look better
+            SizedBox(height: 18), // Add some spacing between the buttons
+            FloatingActionButton(
+              onPressed: () {
+                print("sdfsf");
+              },
+              child: Icon(Icons.add),
+            ),
+          ],
+        ),
         bottomNavigationBar: NavigationBar(
           selectedIndex: 0,
           onDestinationSelected: (int value) {
