@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
 
       //Using padding instead of container is less expensive and more efficient,
-      body: Padding(
+      body: Container(
         padding: EdgeInsets.all(16.0),
         child: Stack(
           children: [
@@ -107,6 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.cover,
               height: double.infinity,
             ),
+
+            //SizeBox similar to container but it is used to give a specific size to the child widget, in this case we are using it to center the text in the middle of the screen
+            //Less expensive than container because it does not have a decoration property and it does not have a child property, it only has a child property that is used to give a specific size to the child widget, in this case we are using it to center the text in the middle of the screen
             SizedBox(
               child: Center(
                 child: Text(
