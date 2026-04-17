@@ -4,6 +4,8 @@ void main() {
   runApp(const MyApp());
 }
 
+String title = "My Title";
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -20,10 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Flutter Demo Home Page',
-            style: TextStyle(color: Colors.white),
-          ),
+          title: Text(title!, style: TextStyle(color: Colors.white)),
         ), //ssd
         bottomNavigationBar: NavigationBar(
           selectedIndex: 0,
