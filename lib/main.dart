@@ -25,6 +25,14 @@ class MyApp extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
+        drawer: Drawer(
+          child: Column(
+            children: [
+              ListTile(title: Text("Sample List Item")),
+              DrawerHeader(child: Text("Drawer Header")),
+            ],
+          ),
+        ), //ssd
         floatingActionButton: Column(
           //if don't add this it won't show
           mainAxisSize: MainAxisSize.min,
