@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/data/notifiers.dart';
 import 'package:flutter_app/views/pages/widget_tree.dart';
 import 'package:flutter_app/views/widgets/navbar_widget.dart';
 
@@ -17,16 +18,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
-        ),
-      ),
-      debugShowCheckedModeBanner: false,
-      home: WidgetTree(),
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+      builder: (context, isDarkModeOn, child) {
+        return MaterialApp(
+          title: "Flutter App",
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple,
+              brightness: isDarkModeOn ? Brightness.light : Brightness.dark,
+            ),
+          ),
+          debugShowCheckedModeBanner: false,
+          home: WidgetTree(),
+        );
+      },
     ); //sd
   }
 }

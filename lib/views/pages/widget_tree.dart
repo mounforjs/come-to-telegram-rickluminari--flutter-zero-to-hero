@@ -17,17 +17,34 @@ class WidgetTree extends StatefulWidget {
 class _WidgetTreeState extends State<WidgetTree> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter App', style: TextStyle(color: Colors.white)),
-      ), //ssd
-      body: ValueListenableBuilder(
-        valueListenable: selectedPageNotifier,
-        builder: (context, selectedPage, child) {
-          return pages.elementAt(selectedPage);
-        },
-      ),
-      bottomNavigationBar: NavbarWidget(),
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+      builder: (context, isDarkModeOn, child) {
+        return Scaffold(
+          appBar: AppBar(
+            actions: [
+              IconButton(
+                onPressed: () {
+                  isDarkModeNotifier.value = !isDarkModeNotifier.value;
+                },
+                icon: Icon(isDarkModeOn ? Icons.dark_mode : Icons.light_mode),
+              ),
+            ],
+            title: Center(
+              child: isDarkModeOn
+                  ? Text("Flutter App", style: TextStyle(color: Colors.black))
+                  : Text("Flutter App", style: TextStyle(color: Colors.white)),
+            ),
+          ),
+          body: ValueListenableBuilder(
+            valueListenable: selectedPageNotifier,
+            builder: (context, selectedPage, child) {
+              return pages.elementAt(selectedPage);
+            },
+          ),
+          bottomNavigationBar: NavbarWidget(),
+        );
+      },
     );
   }
 }
